@@ -54,6 +54,12 @@
 }
 
 
+.float-contact {
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    z-index: 99999;
+}
 
 @media screen and (max-width:768px){
     /* .slide2{
