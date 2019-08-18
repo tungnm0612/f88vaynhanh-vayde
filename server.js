@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// mongodb://<dbuser>:<dbpassword>@ds135790.mlab.com:35790/vayde
-mongooes.connect('mongodb://admin:admin1@ds135790.mlab.com:35790/vayde', function(err){
+// mongodb://<dbuser>:<dbpassword>@ds263917.mlab.com:63917/f88
+mongooes.connect('mongodb://admin:admin1@ds263917.mlab.com:63917/f88', function(err){
     if(err) console.log(err);
     else console.log("connect to DB successfully!!")
 });
@@ -17,15 +17,13 @@ const VaydeModel = require('./models/vayde')
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}));
 
-// app.set('vayde-frontend', './vayde-frontend')
-
 app.use(express.static('public'));
 app.get("/", function(request, response){
     response.sendFile(__dirname + '/public/vayde.html');
 })
 
 
-app.post("/vayde", function(request, response){
+app.post("/f88", function(request, response){
     VaydeModel.create({
         // money: request.body.vayde,
         sdt: request.body.sdt,
